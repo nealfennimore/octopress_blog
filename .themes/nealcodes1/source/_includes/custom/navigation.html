@@ -1,0 +1,34 @@
+{% if site.fixed_navigation %}
+<div class="sticky" data-options="">
+{% endif %}
+  <nav class="top-bar" data-topbar>
+
+    <!--Uncomment {{ site.title }}below if you would like a title area on the left side of the nav bar-->
+
+    <ul class="title-area">
+        <li class="name">
+          <h1><a href="http://neal.codes">{{ site.title }}</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+
+    <section class="top-bar-section">
+
+      <ul class="main-navigation right">
+
+          <li{% if page.url == '/blog/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/">Blog</a></li>
+
+          <li{% if page.url == '/blog/archives/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/archives">Archives</a></li>
+
+          <li><a href="https://github.com/nealfennimore"><span class="fa fa-github-square fa-2x"></span><span class="show-for-small">Github</span></a></li>
+          
+          <li><a href="https://www.linkedin.com/in/nealfennimore/"><span class="fa fa-linkedin-square fa-2x"></span><span class="show-for-small">LinkedIn</span></a></li>
+
+      </ul>
+
+    </section>
+  </nav>
+{% if site.fixed_navigation %}
+</div>
+{% endif %}
