@@ -9,7 +9,8 @@ ssh_port       = "22"
 document_root  = "~/website.com/"
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
-deploy_default = "rsync"
+deploy_default = "s3"
+s3_bucket      = "neal.codes/blog"
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "gh-pages"
@@ -213,6 +214,16 @@ end
 ##############
 # Deploying  #
 ##############
+
+desc "Deploy website to s3"
+task :s3 do
+  exclude = ""
+  if File.exists?('./s3-exclude')
+    exclude = "--exclude-from '#{File.expand_path('./s3-exclude')}'"
+  end
+  puts "## Deploying website via s3cmd"
+  ok_failed system("s3cmd sync --guess-mime-type --acl-public #{exclude} #{"--delete-removed" } #{public_dir}/ s3://#{s3_bucket}/")
+end
 
 desc "Default deploy task"
 task :deploy do
