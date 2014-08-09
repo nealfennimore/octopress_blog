@@ -6,7 +6,7 @@ url: http://neal.codes
 title: neal.codes
 subtitle: All about the codes
 author: Neal Fennimore
-simple_search: https://www.google.com/search
+simple_search: 
 description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
@@ -26,13 +26,13 @@ email: hi@neal.codes
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /
-permalink: /blog/:title/
+root: /blog
+permalink: /:title
 source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
-category_dir: blog/categories
+category_dir: categories
 markdown: rdiscount
 rdiscount:
   extensions:

@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "Setting up Octopress with AWS"
+title: "Hosting Octopress automatically with AWS S3"
 date: 2014-08-09 02:13:15 -0400
 comments: true
-categories: 
+categories: AWS
 ---
 
-Initial Setup
+###Initial Setup
 
-You’ll need to install GPG tools suite for this. Get that and then come back.
+You’ll need to install [GPG tools](https://gpgtools.org/gpgsuite.html) suite for this. Get that and then come back.
 
-Make sure you also have homebrew cause you’ll need it soon.
+Make sure you also have [homebrew](http://brew.sh/) cause you’ll need it soon.
 
-Now for AWS
+###Now for AWS
 
-Log into your AWS account, or make one if you don’t already. Log in and go to the IAM section and then create an access key for a user. MAKE SURE YOU DOWNLOAD THE SECRET KEY FILE. You’ll need it to install s3cmd, as it will have your AWS Secret Key.
+Log into your AWS account, or make one if you don’t already. Log in and go to the IAM section and then create an access key for a user. **_Make sure you download the secret key file_**. You’ll need it to install s3cmd, as it will need your AWS Secret Key.
 
 You’ll also want to create a bucket in S3. Make sure it is the same name as your domain name you’re going to use (i.e. my bucket was named neal.codes as this domain is neal.codes).
 
@@ -62,16 +62,16 @@ Save settings? [y/N] y
 Configuration saved to '/Users/neal/.s3cfg'
 ```
 
-Now add all of the below to your Rakefile in your Octopress root. You’ll be able to auto-sync your local Octopress blog with the S3 bucket using the rake deploy command thereafter.
+Now add all of the below to your Rakefile in your Octopress root. You’ll be able to auto-sync your local Octopress blog with the S3 bucket using the `rake s3` command thereafter.
 
 ``` ruby Rakefile
 # change deploy_default - add s3_bucket
 deploy_default = "s3"
-s3_bucket      = "neal.codes" # My bucket name and domain name
+s3_bucket      = "neal.codes/blog" # My bucket name and domain name // notice folder name for subdirectory
 ```
 
 ``` ruby Rakefile
-# Add this somewhere, probably in the deploy
+# Add this somewhere, probably in the deploy section
 desc "Deploy website to s3"
 task :s3 do
   exclude = ""
@@ -83,8 +83,8 @@ task :s3 do
 end
 ```
 
-Getting your domain to point to AWS
+###Getting your domain to point to AWS
 
-You’ll have to mess with whereever you bought the domain from. Edit the DNS records for your domain, and then add an CNAME record with a value of yourbucket.name.s3-website-us-east-1.amazonaws.com or something similar. Mine is neal.codes.s3-website-us-east-1.amazonaws.com.
+You’ll have to mess with whereever you bought the domain from. Edit the DNS records for your domain, and then add an CNAME record with a value of **yourbucket.name.s3-website-us-east-1.amazonaws.com** or something similar. Mine is **neal.codes.s3-website-us-east-1.amazonaws.com**.
 
 That’s all folks.
