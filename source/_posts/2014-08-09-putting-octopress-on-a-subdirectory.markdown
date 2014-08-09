@@ -18,4 +18,8 @@ You'll more than likely want to get rid of all references to blog in this sectio
 
 {% flickr_image 14863212104 b %}
 
+You should also change the `blog_index_dir` variable to include /blog in the Rakefile.
+
+{% flickr_image 14842810746 b %}
+
 Some themes contain a blog folder and then an archives folder. You'll want to move the archives folder up one level and then you can go ahead and delete the blog folder itself.
