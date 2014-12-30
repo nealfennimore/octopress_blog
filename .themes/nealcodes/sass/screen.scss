@@ -191,7 +191,9 @@ aside h1, .page-header{
 	padding-bottom: 0px;
 	margin-bottom: 20px;
 	h1.page-title{
-		color: $header-font-color;
+		color: $light-gray;
+		font-size: 1.75em;
+		text-transform: uppercase;
 	}
 }
 aside{
