@@ -49,10 +49,14 @@ p{
 	font-weight: $body-font-weight;
 	font-size: $body-font-size;
 	line-height: $body-line-height;
-	border-bottom: $body-paragraph-margin;
+	margin-bottom: $body-paragraph-margin;
 	@media #{$small-only} {
 		font-size: $body-font-size - 2px;
 	}
+}
+
+p.meta {
+	margin-bottom: $body-paragraph-margin / 2;
 }
 
 strong{
@@ -91,7 +95,7 @@ article{
 			font-size: $body-font-size + 2px;
 			i{
 				font-size: $body-font-size;
-				color: $icon-color;
+				color: $light-gray;
 				padding-right: 4px;
 				padding-left: 3px;
 			}
@@ -161,7 +165,7 @@ small{
 
 h1{
 	font-size: 40px;
-	
+
 	&.subheader{
 		font-size: 24px;
 		font-style: italic;
@@ -172,27 +176,43 @@ h1{
 
 	&.entry-title{
 		font-size: 30px;
+		font-family: $page-title-font-family;
+		text-transform: uppercase;
+		letter-spacing: $header-letter-spacing;
 	}
 
 }
 
 aside h1, .page-header{
-	border-bottom: 3px solid $bottom-border-color;
+	border-bottom: 2px solid $bottom-border-color;
 }
 
 .page-header{
 	padding-bottom: 0px;
 	margin-bottom: 20px;
 	h1.page-title{
-		margin-bottom: 0;
+		color: $header-font-color;
 	}
 }
 aside{
 	h1{
-		font-size: 30px;
+		font-size: 1.6em;
+		color: $dark-gray;
+		text-transform: uppercase;
 		i{
 			font-size: 26px;
 			padding-left: 2px;
+			color: $light-gray;
+		}
+	}
+	ul {
+		li {
+			list-style-type: none;
+
+			&:before {
+				content: "\2192";
+				color: $light-gray;
+			}
 		}
 	}
 	.googleplus{
@@ -212,10 +232,34 @@ aside{
 	}
 }
 
+#gh_repos li {
+	&:before {
+		margin-right: 0.3em;
+	}
+	p {
+		display: none;
+	}
+}
 /* adds spacing between nav bar and content */
 
 #main{
 	padding-top: 30px;
+}
+
+h1.page-title{
+	margin-bottom: 0;
+	color: $primary-color;
+	font-family: $page-title-font-family;
+	letter-spacing: $header-letter-spacing;
+	text-transform: uppercase;
+}
+
+#comments {
+	font-align: left;
+	font-size: $body-font-size / 1.25;
+	color: $dark-gray;
+	margin-top: 5em;
+	text-transform: uppercase;
 }
 
 /* formats footer at the bottom of the page */
@@ -229,10 +273,11 @@ footer{
 			font-size: $body-font-size - 4px;
 		}
 		.copyright{
-			color: $header-font-color;
+			color: $gray;
 			font-family: $header-font-family;
-			font-size: $body-font-size + 2px;
+			font-size: $body-font-size / 1.25;
 			padding-bottom: 8px;
+			text-transform: uppercase;
 			display: block;
 		}
 	}
@@ -334,7 +379,7 @@ blockquote{
 			font-size: $body-font-size - 2px;
 			color: $body-font-color;
 		}
-	}	
+	}
 }
 
 /* formats images */
@@ -381,7 +426,7 @@ hr{
 	}
 	time{
 		line-height: $body-line-height;
-		
+
 	}
 	h1{
 		margin-bottom: 0;
@@ -393,5 +438,10 @@ hr{
 
 code{
 	color: $subheader-font-color;
+}
+
+time {
+	font-size: 0.75em;
+	color: $gray;
 }
 
