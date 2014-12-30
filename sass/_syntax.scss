@@ -54,7 +54,7 @@ figure.code{
 .kr     { color: $solar-magenta !important; font-weight: bold !important; }                       /* Keyword.Reserved */
 .kt     { color: $solar-cyan !important; }                       /* Keyword.Type */
 .n      { color: $solar-blue !important; }
-.na     { color: $solar-blue !important; }                                          /* Name.Attribute */
+.na     { color: $attr-green !important; }                                          /* Name.Attribute */
 .nb     { color: $solar-green !important; }                                          /* Name.Builtin */
 .nc     { color: $solar-magenta !important;}                                                   /* Name.Class */
 .no     { color: $solar-yellow !important; }                                          /* Name.Constant */
