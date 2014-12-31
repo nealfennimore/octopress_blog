@@ -1,1 +1,11 @@
 {% include custom/footer.html %}
+<script>
+  // Prevent fancybox from jumping to top of page
+  $('.fancybox').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
+</script>
