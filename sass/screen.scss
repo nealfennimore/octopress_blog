@@ -455,3 +455,7 @@ time {
 	color: $gray;
 }
 
+::selection {
+	background-color: #66D9EF;
+	color: white;
+}
