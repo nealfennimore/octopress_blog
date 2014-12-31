@@ -11,8 +11,7 @@ I worked on a recent newsletter subscribe, but I could not find anything I wante
 First, I installed the [Mailchimp PHP API](https://bitbucket.org/mailchimp/mailchimp-api-php) as a **git submodule** into the lib directory.
 
 `git submodule add https://bitbucket.org/mailchimp/mailchimp-api-php.git lib`
-
-{% flickr_image 15956752610 b %}
+{% flickr_image 15956752610 n left "File hierarchy" %}
 
 You'll need your Mailchimp API key and the list ID to which you'll have people subscribe to. Get those and stick them in the wp-config.
 
