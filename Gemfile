@@ -15,6 +15,8 @@ group :development do
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
   gem 'flickraw'
+  gem 'builder', '> 2.0.0'
+  gem 'persistent_memoize'
   gem 'safe_yaml', '~> 1.0.4'
 end
 
