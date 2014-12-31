@@ -18,12 +18,9 @@ Log into your AWS account, or make one if you don’t already. Log in and go to 
 
 You’ll also want to create a bucket in S3. Make sure it is the same name as your domain name you’re going to use (i.e. my bucket was named neal.codes as this domain is neal.codes).
 
-``` bash Install s3cmd
+``` bash Install s3cmd and configure prompt
 brew install s3cmd
 s3cmd --configure
-```
-
-``` bash The s3cmd –configure prompt
 
 Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
