@@ -1,7 +1,16 @@
 /* formats code highlighting; uses variables in _solarized.scss */
 
 figure.code{
-  margin: 0 10px;
+  margin: 0 10px 10px;
+  display: inline-flex;
+  position: relative;
+  max-width: 100%;
+  figcaption {
+    position: absolute;
+    top: -2em;
+    color: $gray;
+    font-style: italic;
+  }
   .highlight{
     width: 100%;
     max-width: 100%;
